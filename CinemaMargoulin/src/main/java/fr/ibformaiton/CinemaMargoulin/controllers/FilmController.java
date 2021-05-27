@@ -24,5 +24,11 @@ public class FilmController {
 		public List<Film> getAll(){
 			return filmService.getAll();
 		}
+<<<<<<< HEAD
+=======
+	  
+	  
+	  
+>>>>>>> 8914a9174afcca46edb81d04d599adc3e9ad4ec9
 
 }
