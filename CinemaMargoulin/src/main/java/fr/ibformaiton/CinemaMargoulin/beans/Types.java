@@ -20,13 +20,12 @@ public class Types {
 	private String designation;
 	private int pegi;
 	
-	
-	public Types(int id, String designation, int pegi) {
-		super();
-		this.id = id;
+	public Types(String designation, int pegi) {
 		this.designation = designation;
 		this.pegi = pegi;
 	}
+	
+	
 	
 	
 	

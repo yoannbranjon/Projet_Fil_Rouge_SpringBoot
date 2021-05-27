@@ -1,9 +1,6 @@
 package fr.ibformaiton.CinemaMargoulin.Services;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import fr.ibformaiton.CinemaMargoulin.DAO.FilmDAO;
 import fr.ibformaiton.CinemaMargoulin.beans.Film;
 
 /**

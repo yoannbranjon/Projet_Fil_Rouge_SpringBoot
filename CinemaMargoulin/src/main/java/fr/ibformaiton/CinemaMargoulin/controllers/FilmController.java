@@ -1,8 +1,9 @@
 package fr.ibformaiton.CinemaMargoulin.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.ibformaiton.CinemaMargoulin.Services.FilmService;
@@ -19,5 +20,9 @@ public class FilmController {
 	        return "Bonjour bonjour du cinema Margoulin";
 	    }
 	  
+	  @GetMapping("/REST/recupfilm")
+		public List<Film> getAll(){
+			return filmService.getAll();
+		}
 
 }

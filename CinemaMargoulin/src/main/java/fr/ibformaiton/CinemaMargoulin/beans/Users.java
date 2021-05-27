@@ -18,26 +18,18 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String mail;
-	private String password;
 	private String firstName;
 	private String lastName;
 	private LocalDate birthday;
-	private String adress;
+	private String address;
+	private int idAcoount;
 	
-	
-	public Users(int id, String mail, String password, String firstName, String lastName, LocalDate birthday,
-			String adress) {
-		super();
-		this.id = id;
-		this.mail = mail;
-		this.password = password;
+	public Users(String firstName, String lastName, LocalDate birthday, String address, int idAcoount) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthday = birthday;
-		this.adress = adress;
+		this.address = address;
+		this.idAcoount = idAcoount;
 	}
 	
-	
-
 }

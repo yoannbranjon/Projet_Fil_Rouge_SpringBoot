@@ -18,18 +18,19 @@ public class Session {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private int filmId;
-	private int roomId;
+	private int idFilm;
+	private int idRoom;
 	private LocalDateTime dateTime;
-	
-	
-	public Session(int id, int filmId, int roomId, LocalDateTime dateTime) {
-		super();
-		this.id = id;
-		this.filmId = filmId;
-		this.roomId = roomId;
+		
+	public Session(int idFilm, int idRoom, LocalDateTime dateTime) {
+		this.idFilm = idFilm;
+		this.idRoom = idRoom;
 		this.dateTime = dateTime;
 	}
+	
+	
+	
+	
 	
 	
 

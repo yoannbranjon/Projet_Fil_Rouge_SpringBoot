@@ -15,19 +15,23 @@ public class Reservation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int reservationId;
+	private int id;
 	private String name;
 	private int price;
-	private int sessionId;
-	private int userId;
-
-	public Reservation(String name, int price, int sessionId, int userId) {
+	private int idSession;
+	private int idUser;
+	private int idAccount;
+	
+	
+	public Reservation(String name, int price, int idSession, int idUser, int idAccount) {
 		this.name = name;
 		this.price = price;
-		this.sessionId = sessionId;
-		this.userId = userId;
-	
+		this.idSession = idSession;
+		this.idUser = idUser;
+		this.idAccount = idAccount;
 	}
+
+	
 	
 
 }

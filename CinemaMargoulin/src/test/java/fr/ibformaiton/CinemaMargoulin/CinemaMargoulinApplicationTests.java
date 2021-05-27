@@ -30,7 +30,6 @@ class CinemaMargoulinApplicationTests {
 		
 		System.out.println(filmService.getAll());
 		
-		
 	}
 
 }

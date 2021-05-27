@@ -4,31 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Room {
+public class Account {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String name;
-	private int sitNumber;
-	private int maxCapacity;
-	private String audioSystem;
+	private String email;
+	private String password;
 	
-	public Room(String name, int sitNumber, int maxCapacity, String audioSystem) {
-		this.name = name;
-		this.sitNumber = sitNumber;
-		this.maxCapacity = maxCapacity;
-		this.audioSystem = audioSystem;
+	public Account(String email, String password) {
+		this.email = email;
+		this.password = password;
 	}
 	
-	
-
-	
-
+		
 }
