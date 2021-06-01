@@ -26,6 +26,8 @@ public interface FilmService {
 	public List<Film> getAll();
 	
 	public Film getById(Integer id);
+
+	public void deleteFilmById(int id);
 	
 	
 	

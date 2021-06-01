@@ -52,5 +52,15 @@ public class FilmServiceImpl implements FilmService {
 		return filmDAO.findById(id).orElse(null);
 	}
 	
+	@Override
+	@Transactional
+	public void deleteFilmById(int id) {
+
+		filmDAO.deleteById(id);
+	}
+
+	
+
+	
 
 }

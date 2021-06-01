@@ -8,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.ibformaiton.CinemaMargoulin.Services.RoomService;
 
 import fr.ibformaiton.CinemaMargoulin.beans.Room;
+import fr.ibformaiton.CinemaMargoulin.beans.Session;
+import fr.ibformaiton.CinemaMargoulin.beans.Users;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -32,4 +36,14 @@ public class RoomController {
 	public List<Room> getAll() {
 		return roomService.getAll();
 	}
+
+
+	@PostMapping("/REST/addNewRoom")
+	@Transactional // A ajouter lorsqu'on modifie qqc en BDD
+	public void addRoom(@RequestBody Room room) {
+		roomService.add(room);
+	}
+
+
+
 }

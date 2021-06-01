@@ -41,5 +41,19 @@ public class UsersController {
 	        usersService.add(users);
 
 	    }
+	  
+	  @PostMapping("/REST/updateUser")
+	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
+	    public void updateUser(@RequestBody Users users) {
+	        usersService.update(users);
+
+	    }
+	  
+	  @PostMapping("/REST/deleteUser")
+	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
+	    public void deleteUser(@RequestBody Users users) {
+	        usersService.delete(users);
+
+	    }
 
 }

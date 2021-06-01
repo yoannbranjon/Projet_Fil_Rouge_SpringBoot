@@ -1,7 +1,11 @@
 package fr.ibformaiton.CinemaMargoulin.controllers;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,35 +14,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.ibformaiton.CinemaMargoulin.Services.ReservationService;
-import fr.ibformaiton.CinemaMargoulin.beans.Reservation;
+import fr.ibformaiton.CinemaMargoulin.Services.SessionService;
+import fr.ibformaiton.CinemaMargoulin.beans.Session;
 import fr.ibformaiton.CinemaMargoulin.beans.Users;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class ReservationController {
+public class SessionController {
 
 	@Autowired
-	private ReservationService reservationService;
+	private SessionService sessionService;
 
 	@PostConstruct
 	@Transactional
 	void init() {
-		Reservation reservation = new Reservation("NezhaResa", 8, 2, 12, 13);
-		reservationService.add(reservation);
+		Session session = new Session(1,1, LocalDateTime.of(2007,10,12, 0, 0));
+		sessionService.add(session);
 	}
 
-	@GetMapping("/REST/recupreservation")
-	public List<Reservation> getAll() {
-		return reservationService.getAll();
+	@GetMapping("/REST/recupsession")
+	public List<Session> getAll() {
+		return sessionService.getAll();
 	}
 	
-	 @PostMapping("/REST/addNewReservation")
+	 @PostMapping("/REST/addNewSession")
 	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
-	    public void addReservation(@RequestBody Reservation reservation) {
-	        reservationService.add(reservation);
-
+	    public void addSession(@RequestBody Session session) {
+	        sessionService.add(session);
 	    }
 	  
-
+	
+	
 }
