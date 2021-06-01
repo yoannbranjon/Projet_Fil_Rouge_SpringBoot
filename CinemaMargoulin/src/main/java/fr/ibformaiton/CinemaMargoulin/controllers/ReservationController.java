@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.ibformaiton.CinemaMargoulin.Services.ReservationService;
 import fr.ibformaiton.CinemaMargoulin.beans.Reservation;
 
+
+
 @RestController
 public class ReservationController {
 
@@ -18,10 +20,7 @@ public class ReservationController {
 
 	@PostConstruct
 	@Transactional
-	void init() {
-		Reservation reservation = new Reservation("NezhaResa", 8, 2, 12, 13);
-		reservationService.add(reservation);
-	}
+
 
 	@GetMapping("/REST/recupreservation")
 	public List<Reservation> getAll() {
