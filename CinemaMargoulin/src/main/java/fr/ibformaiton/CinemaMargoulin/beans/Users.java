@@ -33,20 +33,22 @@ public class Users {
 
 	private LocalDate birthday;
 	private String address;
+	private int postalCode;
+	private String city;
+	
 
-	public Users(String firstName, String lastName, Account account, LocalDate birthday, String address) {
+	
+	public Users(String firstName, String lastName, Account account, LocalDate birthday, String address, int postalCode,
+			String city) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.account = account;
 		this.birthday = birthday;
 		this.address = address;
+		this.postalCode = postalCode;
+		this.city = city;
 	}
 
-	@Override
-	public String toString() {
-		return "Users [firstName=" + firstName + ", lastName=" + lastName + ", account=" + account + ", birthday="
-				+ birthday + ", address=" + address + "]";
-	}
-
+		
 }

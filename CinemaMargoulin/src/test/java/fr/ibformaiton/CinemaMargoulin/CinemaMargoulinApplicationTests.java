@@ -58,8 +58,9 @@ class CinemaMargoulinApplicationTests {
 
 	@Test
 	void testServiceUsers() {
-		Users user = new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),
-				"rue de la merde");
+		Users user = new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
+				"Nantes");
+		
 		usersService.add(user);
 
 		user.setAddress("rue de la merde");
@@ -67,8 +68,8 @@ class CinemaMargoulinApplicationTests {
 
 		usersService.delete(user);
 
-		usersService.add(new Users("Anthony", "Waza", new Account("antho@hot.fr", "biss"), LocalDate.of(2021, 5, 15),
-				"rue de du cacaS"));
+		usersService.add(new Users("Anthony", "Waza", new Account("antho@hot.fr", "biss"), LocalDate.of(2021, 5, 15), "20, rue de la Bastille", 44100,
+				"Nantes"));
 
 		System.out.println(usersService.getAll());
 
@@ -79,8 +80,8 @@ class CinemaMargoulinApplicationTests {
 		Reservation reservation = new Reservation("NezhaResa", 8,
 				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
 						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
-				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),
-						"rue de la merde"),
+				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
+						"Nantes"),
 				1);
 
 		reservationService.add(reservation);
@@ -93,8 +94,8 @@ class CinemaMargoulinApplicationTests {
 		reservationService.add(new Reservation("YoannResa", 9,
 				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
 						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
-				new Users("Nezha", "Merde", new Account("youyou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),
-						"rue de la merde bis"),
+				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
+						"Nantes"),
 				1));
 
 		System.out.println(reservationService.getAll());
@@ -137,7 +138,7 @@ class CinemaMargoulinApplicationTests {
 	@Test
 	void testServiceSession() {
 		Session session = new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
-				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, Month.FEBRUARY, 3, 6, 30, 40, 50000));
+				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2021, Month.JUNE, 14, 30, 30, 40, 50000));
 		sessionService.add(session);
 
 		// session.setId(13);

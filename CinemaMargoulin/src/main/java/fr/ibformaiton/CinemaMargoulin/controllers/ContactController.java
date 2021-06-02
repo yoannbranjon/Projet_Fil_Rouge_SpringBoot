@@ -12,36 +12,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.ibformaiton.CinemaMargoulin.Services.AccountService;
-import fr.ibformaiton.CinemaMargoulin.beans.Account;
-import fr.ibformaiton.CinemaMargoulin.beans.Users;
+import fr.ibformaiton.CinemaMargoulin.Services.ContactService;
+import fr.ibformaiton.CinemaMargoulin.beans.Contact;
+
 
 @RestController
 @CrossOrigin(origins = "*")
-public class AccountController {
-
+public class ContactController {
+	
 	@Autowired
-	private AccountService accountService;
-
+	private ContactService contactService;
+	
 	@PostConstruct
 	@Transactional
-//	void init() {
-//		Account account = new Account("nezha@gmail.com", "password");
-//		accountService.add(account);
-//	}
-
-	@GetMapping("/REST/recupaccount")
-	public List<Account> getAll() {
-		return accountService.getAll();
+	
+	@GetMapping("/REST/recupcontact")
+	public List<Contact> getAll() {
+		return contactService.getAll();
 	}
 	
-	 @PostMapping("/REST/addNewAccount")
+	 @PostMapping("/REST/addNewContact")
 	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
-	    public void addAccount(@RequestBody Account account) {
-	        accountService.add(account);
+	    public void addContact(@RequestBody Contact contact) {
+		 contactService.add(contact);
 
 	    }
-	  
-	
-	
 }
