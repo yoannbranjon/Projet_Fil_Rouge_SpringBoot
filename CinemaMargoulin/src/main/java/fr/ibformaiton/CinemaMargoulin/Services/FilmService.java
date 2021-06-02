@@ -15,6 +15,8 @@ public interface FilmService {
 	 */
 	public void add(Film film);
 	
+	public void add(List<Film> films);
+	
 	/**
 	 * efface un film
 	 * @param film
@@ -28,6 +30,8 @@ public interface FilmService {
 	public Film getById(Integer id);
 
 	public void deleteFilmById(int id);
+
+	public List<String> getAllNameFilms();
 	
 	
 	

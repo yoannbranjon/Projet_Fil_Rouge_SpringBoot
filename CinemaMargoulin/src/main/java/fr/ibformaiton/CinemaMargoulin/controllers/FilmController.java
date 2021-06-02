@@ -39,6 +39,13 @@ public class FilmController {
 
 	    }
 	 
+	 @PostMapping("/REST/addListFilms")
+	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
+	    public void addFilmSamples(@RequestBody List<Film> films) {
+	        filmService.add(films);
+
+	    }
+	 
 	 @PostMapping("/REST/deleteFilm")
 	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
 	    public void deleteFilm(@RequestBody Film film) {
@@ -52,6 +59,11 @@ public class FilmController {
 	        filmService.deleteFilmById(id);
 
 	    }
+	 
+	 @GetMapping("/REST/recupNameFilms")
+		public List<String> getAllNameFilms() {
+			return filmService.getAllNameFilms();
+		}
 	  
 
 }

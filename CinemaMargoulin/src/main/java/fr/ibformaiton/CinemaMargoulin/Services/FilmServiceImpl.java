@@ -1,5 +1,6 @@
 package fr.ibformaiton.CinemaMargoulin.Services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -22,6 +23,14 @@ public class FilmServiceImpl implements FilmService {
 		filmDAO.save(film);
 		
 	}
+	
+	@Override
+	@Transactional
+	public void add(List<Film> films) {
+		filmDAO.saveAll(films);
+		
+	}
+
 
 	@Override
 	@Transactional
@@ -57,6 +66,24 @@ public class FilmServiceImpl implements FilmService {
 	public void deleteFilmById(int id) {
 
 		filmDAO.deleteById(id);
+	}
+
+	@Override
+	@Transactional
+	public List<String> getAllNameFilms() {
+		
+		List<Film> filmsToExtractNames = (List<Film>) filmDAO.findAll();
+		
+		List<String> names = new ArrayList<String>();
+		
+		for (int i=0; i< filmsToExtractNames.size(); i++) {
+			
+			String name = filmsToExtractNames.get(i).getName();
+			names.add(name);
+		}
+		
+		return names;
+		
 	}
 
 	
