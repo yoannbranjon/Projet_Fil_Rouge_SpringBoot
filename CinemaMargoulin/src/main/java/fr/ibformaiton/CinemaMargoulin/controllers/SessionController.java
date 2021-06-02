@@ -28,8 +28,6 @@ public class SessionController {
 	@PostConstruct
 	@Transactional
 	void init() {
-		Session session = new Session(1,1, LocalDateTime.of(2007,10,12, 0, 0));
-		sessionService.add(session);
 	}
 
 	@GetMapping("/REST/recupsession")
