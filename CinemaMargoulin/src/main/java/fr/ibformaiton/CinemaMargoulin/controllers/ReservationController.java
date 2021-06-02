@@ -14,6 +14,9 @@ import fr.ibformaiton.CinemaMargoulin.Services.ReservationService;
 import fr.ibformaiton.CinemaMargoulin.beans.Reservation;
 import fr.ibformaiton.CinemaMargoulin.beans.Users;
 
+
+
+
 @RestController
 @CrossOrigin(origins = "*")
 public class ReservationController {
@@ -21,12 +24,10 @@ public class ReservationController {
 	@Autowired
 	private ReservationService reservationService;
 
+
 	@PostConstruct
 	@Transactional
-	void init() {
-		Reservation reservation = new Reservation("NezhaResa", 8, 2, 12, 13);
-		reservationService.add(reservation);
-	}
+
 
 	@GetMapping("/REST/recupreservation")
 	public List<Reservation> getAll() {
