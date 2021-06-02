@@ -1,5 +1,6 @@
 package fr.ibformaiton.CinemaMargoulin.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,11 +24,11 @@ public class Reservation {
 	private String name;
 	private int price;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "session_id")
 	private Session session;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "users_id")
 	private Users users;
 	

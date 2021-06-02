@@ -2,6 +2,7 @@ package fr.ibformaiton.CinemaMargoulin.beans;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,11 +24,11 @@ public class Session {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "film_id")
 	private Film film;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "room_id")
 	private Room room;
 	

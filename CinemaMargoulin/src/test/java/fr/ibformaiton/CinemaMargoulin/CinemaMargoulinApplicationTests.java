@@ -78,8 +78,7 @@ class CinemaMargoulinApplicationTests {
 	void testServiceReservation() {
 		Reservation reservation = new Reservation("NezhaResa", 8,
 				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
-						new Room("Margou", 100, 50, "Dolby"),
-						LocalDateTime.of(2017,02, 3, 6, 30, 40, 50)),
+						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
 				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),
 						"rue de la merde"),
 				1);
@@ -93,8 +92,7 @@ class CinemaMargoulinApplicationTests {
 
 		reservationService.add(new Reservation("YoannResa", 9,
 				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
-						new Room("Margou", 100, 50, "Dolby"),
-						LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
+						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
 				new Users("Nezha", "Merde", new Account("youyou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),
 						"rue de la merde bis"),
 				1));
@@ -142,7 +140,7 @@ class CinemaMargoulinApplicationTests {
 				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, Month.FEBRUARY, 3, 6, 30, 40, 50000));
 		sessionService.add(session);
 
-		//session.setId(13);
+		// session.setId(13);
 		sessionService.update(session);
 
 		sessionService.delete(session);
