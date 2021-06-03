@@ -1,6 +1,7 @@
 package fr.ibformaiton.CinemaMargoulin.beans;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,17 +22,27 @@ public class Contact {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String comment;
+	private String message;
 	
 	
-	
-	public Contact(String firstName, String lastName, String email, String comment) {
+	// create an LocalDateTime object
+    private LocalDateTime dateTimeContact
+        	= LocalDateTime.now();
 
+
+	public Contact(String firstName, String lastName, String email, String message) {
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.comment = comment;
+		this.message = message;
 	}
+
+
+
+	
+	
+
 	
 	
 	

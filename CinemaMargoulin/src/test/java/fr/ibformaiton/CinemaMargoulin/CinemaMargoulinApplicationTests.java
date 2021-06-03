@@ -44,7 +44,7 @@ class CinemaMargoulinApplicationTests {
 
 	@Test
 	void testServiceFilm() {
-		Film film = new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12);
+		Film film = new Film("La Liste de Schindler", 195, "VO", "Dolby", "Historique, Guerre", "Evocation des années de guerre d'Oskar Schindler, industriel autrichien rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique.","Un chef-d'oeuvre", "Steven Spielberg", 12);
 		filmService.add(film);
 
 		film.setDisplay("C'était bien");
@@ -78,9 +78,9 @@ class CinemaMargoulinApplicationTests {
 	@Test
 	void testServiceReservation() {
 		Reservation reservation = new Reservation("NezhaResa", 8,
-				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
+				new Session(new Film("La Liste de Schindler", 195, "VO", "Dolby", "Historique, Guerre", "Evocation des années de guerre d'Oskar Schindler, industriel autrichien rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique.","Un chef-d'oeuvre", "Steven Spielberg", 12),
 						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
-				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
+				new Users("Nezha", "Merde", new Account("boubou@gmail.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
 						"Nantes"),
 				1);
 
@@ -91,10 +91,10 @@ class CinemaMargoulinApplicationTests {
 
 		reservationService.delete(reservation);
 
-		reservationService.add(new Reservation("YoannResa", 9,
-				new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
+		reservationService.add(new Reservation("AnthonyResa", 9,
+				new Session(new Film("La Liste de Schindler", 195, "VO", "Dolby", "Historique, Guerre", "Evocation des années de guerre d'Oskar Schindler, industriel autrichien rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique.","Un chef-d'oeuvre", "Steven Spielberg", 12),
 						new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2017, 02, 3, 6, 30, 40, 50)),
-				new Users("Nezha", "Merde", new Account("boubou@hot.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
+				new Users("Anthony", "Thual", new Account("antho@gmail.fr", "bis"), LocalDate.of(2021, 9, 10),"18, rue de la Tannerie", 44100,
 						"Nantes"),
 				1));
 
@@ -137,7 +137,7 @@ class CinemaMargoulinApplicationTests {
 
 	@Test
 	void testServiceSession() {
-		Session session = new Session(new Film("kill bill", 2, "Vo", "Dolby", "Action", "c'est caca", "Spilberg", 12),
+		Session session = new Session(new Film("Le Roi Lion", 89, "VF", "Dolby", "Animation", "Le long combat de Simba le lionceau pour accéder à son rang de roi des animaux, après que le fourbe Scar, son oncle, a tué son père et pris sa place.","Une belle animation, ainsi que de beaux décors", "Roger Allers", 6),
 				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2021, Month.JUNE, 14, 30, 30, 40, 50000));
 		sessionService.add(session);
 
@@ -147,7 +147,7 @@ class CinemaMargoulinApplicationTests {
 		sessionService.delete(session);
 
 		sessionService.add(new Session(
-				new Film("kill Phill", 2, "Vo", "Dolby", "Animation", "c'est caca", "Jakson", 12),
+				new Film("Pulp Fiction", 149, "VF", "Dolby", "Policier, Thriller", "L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent.","Un très bon film, du très grand Tarantino", "Quentin Tarantino", 12),
 				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2018, Month.FEBRUARY, 3, 6, 30, 40, 50000)));
 
 		System.out.println(sessionService.getAll());

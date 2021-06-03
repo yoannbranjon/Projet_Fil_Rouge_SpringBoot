@@ -23,23 +23,28 @@ public class Film {
 	private String filmVersion;
 	private String display;
 	private String typeFilm;
-	private String comment;
+	private String synopsis;
+	private String userComment;
 	private String director; // realisateur
 	private int pegi;
 	
 	
-	public Film(String name, int duration, String filmVersion, String display, String typeFilm, String comment,
-			String director, int pegi) {
+	public Film(String name, int duration, String filmVersion, String display, String typeFilm, String synopsis,
+			String userComment, String director, int pegi) {
 
 		this.name = name;
 		this.duration = duration;
 		this.filmVersion = filmVersion;
 		this.display = display;
 		this.typeFilm = typeFilm;
-		this.comment = comment;
+		this.synopsis = synopsis;
+		this.userComment = userComment;
 		this.director = director;
 		this.pegi = pegi;
 	}
+	
+	
+	
 	
 	
 	
