@@ -9,9 +9,10 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-
+import fr.ibformaiton.CinemaMargoulin.DAO.ContactDAO;
 import fr.ibformaiton.CinemaMargoulin.DAO.ReservationDAO;
 import fr.ibformaiton.CinemaMargoulin.beans.Account;
+import fr.ibformaiton.CinemaMargoulin.beans.Contact;
 import fr.ibformaiton.CinemaMargoulin.beans.Film;
 import fr.ibformaiton.CinemaMargoulin.beans.Reservation;
 import fr.ibformaiton.CinemaMargoulin.beans.Room;
@@ -28,6 +29,8 @@ public class DemoData {
 //    private SessionDAO sessionDAO;
     @Autowired
     private ReservationDAO reservationDAO;
+    @Autowired
+    private ContactDAO contactDAO;
     @EventListener
     public void appReady(ApplicationReadyEvent event) {
     	
@@ -91,6 +94,11 @@ public class DemoData {
 						"Nantes"),
 				1));
         
+        
+        contactDAO.save(new Contact("Yoann", "Bron", "Yoannb@gmail.com", "Doléance : je voudrais plus d'animés Japonais SVP!"
+				));
+        
+        contactDAO.save(new Contact("Nezha", "bouhafs", "bouhafsn@gmail.com", "Doléance : je voudrais plus de séance le matin svp!"));
     }
     
 

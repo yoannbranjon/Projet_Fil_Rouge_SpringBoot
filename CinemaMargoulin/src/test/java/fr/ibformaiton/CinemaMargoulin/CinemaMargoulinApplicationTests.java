@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.ibformaiton.CinemaMargoulin.Services.AccountService;
+import fr.ibformaiton.CinemaMargoulin.Services.ContactService;
 import fr.ibformaiton.CinemaMargoulin.Services.FilmService;
 import fr.ibformaiton.CinemaMargoulin.Services.ReservationService;
 import fr.ibformaiton.CinemaMargoulin.Services.RoomService;
 import fr.ibformaiton.CinemaMargoulin.Services.SessionService;
 import fr.ibformaiton.CinemaMargoulin.Services.UsersService;
 import fr.ibformaiton.CinemaMargoulin.beans.Account;
+import fr.ibformaiton.CinemaMargoulin.beans.Contact;
 import fr.ibformaiton.CinemaMargoulin.beans.Film;
 import fr.ibformaiton.CinemaMargoulin.beans.Reservation;
 import fr.ibformaiton.CinemaMargoulin.beans.Room;
@@ -41,6 +43,9 @@ class CinemaMargoulinApplicationTests {
 
 	@Autowired
 	SessionService sessionService;
+	
+	@Autowired
+	ContactService contactService;
 
 	@Test
 	void testServiceFilm() {
@@ -136,21 +141,19 @@ class CinemaMargoulinApplicationTests {
 	}
 
 	@Test
-	void testServiceSession() {
-		Session session = new Session(new Film("Le Roi Lion", 89, "VF", "Dolby", "Animation", "Le long combat de Simba le lionceau pour accéder à son rang de roi des animaux, après que le fourbe Scar, son oncle, a tué son père et pris sa place.","Une belle animation, ainsi que de beaux décors", "Roger Allers", 6),
-				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2021, Month.JUNE, 14, 30, 30, 40, 50000));
-		sessionService.add(session);
+	void testServiceContact() {
+		Contact contact = new Contact("Nezha", "bouhafs", "bouhafsn@gmail.com", "Doléance : je voudrais plus de séance le matin svp!");
+		contactService.add(contact);
 
 		// session.setId(13);
-		sessionService.update(session);
+		contactService.update(contact);
 
-		sessionService.delete(session);
+		contactService.delete(contact);
 
-		sessionService.add(new Session(
-				new Film("Pulp Fiction", 149, "VF", "Dolby", "Policier, Thriller", "L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent.","Un très bon film, du très grand Tarantino", "Quentin Tarantino", 12),
-				new Room("Margou", 100, 50, "Dolby"), LocalDateTime.of(2018, Month.FEBRUARY, 3, 6, 30, 40, 50000)));
+		contactService.add(new Contact("Yoann", "Bron", "Yoannb@gmail.com", "Doléance : je voudrais plus d'animés Japonais SVP!"
+				));
 
-		System.out.println(sessionService.getAll());
+		System.out.println(contactService.getAll());
 	}
 
 }

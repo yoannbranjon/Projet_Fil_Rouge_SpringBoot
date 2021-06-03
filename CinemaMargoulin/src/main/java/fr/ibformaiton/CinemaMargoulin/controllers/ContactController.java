@@ -16,6 +16,7 @@ import fr.ibformaiton.CinemaMargoulin.Services.ContactService;
 import fr.ibformaiton.CinemaMargoulin.beans.Contact;
 
 
+
 @RestController
 @CrossOrigin(origins = "*")
 public class ContactController {
@@ -25,6 +26,10 @@ public class ContactController {
 	
 	@PostConstruct
 	@Transactional
+//	void init() {
+//		Contact contact = new Contact("Nezha", "bouhafs", "bouhafsn@gmail.com", "Doléance : je voudrais plus de séance le matin svp!");
+//		contactService.add(contact);
+//	}
 	
 	@GetMapping("/REST/recupcontact")
 	public List<Contact> getAll() {

@@ -2,7 +2,6 @@ package fr.ibformaiton.CinemaMargoulin.beans;
 
 
 import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,12 +25,14 @@ public class Contact {
 	
 	
 	// create an LocalDateTime object
+	
+	
     private LocalDateTime dateTimeContact
         	= LocalDateTime.now();
-
+    //private ZonedDateTime dateTimeContact = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
+    //private TimeZone.setDefault(TimeZone.getTimeZone("Europe/London"));
 
 	public Contact(String firstName, String lastName, String email, String message) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
