@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 
-@Table(name = "user")
+@Table(name = "users")
 public class Users {
 
 	@Id // clé primaire
