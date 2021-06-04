@@ -53,7 +53,7 @@ class CinemaMargoulinApplicationTests {
 		filmService.add(film);
 
 		film.setDisplay("C'était bien");
-		filmService.update(film);
+		filmService.updateFilm(film);
 
 		filmService.delete(film);
 

@@ -23,15 +23,17 @@ public interface FilmService {
 	 */
 	public void delete(Film film);
 	
-	public void update(Film film);
+	public void updateFilm(Film film);
 	
 	public List<Film> getAll();
 	
-	public Film getById(Integer id);
+	public Film getFilmById(Integer id);
 
 	public void deleteFilmById(int id);
 
 	public List<String> getAllNameFilms();
+
+
 	
 	
 	

@@ -41,7 +41,7 @@ public class FilmServiceImpl implements FilmService {
 
 	@Override
 	@Transactional
-	public void update(Film film) {
+	public void updateFilm(Film film) {
 		filmDAO.save(film);
 		
 		
@@ -56,7 +56,7 @@ public class FilmServiceImpl implements FilmService {
 
 	@Override
 	@Transactional
-	public Film getById(Integer id) {
+	public Film getFilmById(Integer id) {
 	
 		return filmDAO.findById(id).orElse(null);
 	}
@@ -85,6 +85,7 @@ public class FilmServiceImpl implements FilmService {
 		return names;
 		
 	}
+
 
 	
 
