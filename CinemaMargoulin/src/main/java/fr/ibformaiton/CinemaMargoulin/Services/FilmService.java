@@ -25,6 +25,8 @@ public interface FilmService {
 	
 	public void updateFilm(Film film);
 	
+	public void updateFilmById(Film film, int id);
+	
 	public List<Film> getAll();
 	
 	public Film getFilmById(Integer id);
