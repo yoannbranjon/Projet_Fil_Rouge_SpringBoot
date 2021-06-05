@@ -31,5 +31,7 @@ public interface RoomService {
 	public List<Room> getAll();
 	
 	public Room getById(Integer id);
+
+	public void deleteRoomById(int id);
 	
 }
