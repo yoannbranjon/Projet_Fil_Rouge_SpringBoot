@@ -61,6 +61,12 @@ public class FilmController {
 
 	    }
 	 
+	 @PutMapping("/REST/updateFilmById")
+	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
+	    public void updateFilmById(@RequestBody Film film, @RequestBody int id) {
+	        filmService.updateFilmById(film, id);
+	    }
+	 
 	 @DeleteMapping("/REST/deleteFilmById")
 	    @Transactional // A ajouter lorsqu'on modifie qqc en BDD
 	    public void deleteFilmById(@RequestParam("id") int id) {
