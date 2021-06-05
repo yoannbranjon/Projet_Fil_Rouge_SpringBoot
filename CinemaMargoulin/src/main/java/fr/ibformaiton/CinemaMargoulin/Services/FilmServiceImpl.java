@@ -44,7 +44,16 @@ public class FilmServiceImpl implements FilmService {
 	public void updateFilm(Film film) {
 		filmDAO.save(film);
 		
+	}
+	
+	@Override
+	@Transactional
+	public void updateFilmById(Film film, int id) {
+		//Film film1 = filmDAO.findById(id).get();
+		//film1.setName("MichMich");
 		
+		filmDAO.save(film);
+
 	}
 
 	@Override

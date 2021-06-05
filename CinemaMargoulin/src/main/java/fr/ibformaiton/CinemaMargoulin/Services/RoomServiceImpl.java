@@ -50,5 +50,11 @@ public class RoomServiceImpl implements RoomService{
 
 	}
 
+	@Override
+	@Transactional
+	public void deleteRoomById(int id) {
+
+		roomDAO.deleteById(id);
+	}
 
 }
