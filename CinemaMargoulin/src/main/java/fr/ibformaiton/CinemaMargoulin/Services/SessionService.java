@@ -20,7 +20,7 @@ public interface SessionService {
 	 * effacer d'une seance
 	 * @param compte
 	 */
-	public void delete(Session session);
+	public void deleteSessionById(int id);
 	
 	/**
 	 * Update d'une seance

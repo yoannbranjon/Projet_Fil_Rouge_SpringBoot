@@ -20,6 +20,7 @@ public interface ReservationService {
 	 * @param reservation
 	 */
 	public void delete(Reservation reservation);
+
 	
 	/**
 	 * Update une reservation

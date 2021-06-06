@@ -130,7 +130,7 @@ class CinemaMargoulinApplicationTests {
 		roomService.add(room);
 
 		room.setMaxCapacity(80);
-		roomService.update(room);
+		roomService.updateRoom(room);
 
 		roomService.delete(room);
 

@@ -2,6 +2,8 @@ package fr.ibformaiton.CinemaMargoulin.Services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,18 +17,23 @@ public class SessionServiceImpl implements SessionService{
 	SessionDAO sessionDAO;
 	
 	@Override
+	@Transactional
 	public void add(Session session) {
 		sessionDAO.save(session);
 		
 	}
 
+	
 	@Override
-	public void delete(Session session) {
-		sessionDAO.delete(session);
-		
+	@Transactional
+	public void deleteSessionById(int id) {
+
+		sessionDAO.deleteById(id);
 	}
 
+
 	@Override
+	@Transactional
 	public void update(Session session) {
 		sessionDAO.save(session);
 		
