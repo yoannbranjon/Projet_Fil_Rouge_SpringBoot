@@ -28,6 +28,15 @@ public class ReservationServiceImpl implements ReservationService{
 				
 	}
 	
+
+	@Override
+	@Transactional
+	public void deleteReservationById(int id) {
+
+		reservationDAO.deleteById(id);
+	}
+
+	
 	
 	
 	@Override

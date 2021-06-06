@@ -20,6 +20,8 @@ public interface ReservationService {
 	 * @param reservation
 	 */
 	public void delete(Reservation reservation);
+	
+	public void deleteReservationById(int id);
 
 	
 	/**
