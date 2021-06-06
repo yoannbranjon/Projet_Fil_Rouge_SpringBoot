@@ -30,7 +30,7 @@ public class RoomServiceImpl implements RoomService{
 
 	@Override
 	@Transactional
-	public void update(Room room) {
+	public void updateRoom(Room room) {
 		roomDAO.save(room);
 
 		

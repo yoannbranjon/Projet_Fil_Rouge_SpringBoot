@@ -26,7 +26,7 @@ public interface RoomService {
 	 * Update une salle
 	 * @param Room
 	 */	
-	public void update(Room room);
+	public void updateRoom(Room room);
 	
 	public List<Room> getAll();
 	
